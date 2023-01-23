@@ -1,0 +1,64 @@
+<script lang="ts">
+	import FileDownload from '$lib/FileDownload.svelte';
+	import type { WorldsRecord, WorldsResponse } from '$lib/types';
+	import { getImageUrl } from '$lib/utils';
+	import { tick } from 'svelte';
+	import { dataset_dev } from 'svelte/internal';
+
+	export let world: WorldsResponse;
+	export const link: Boolean = false;
+	let hidden = true;
+	let toggleHidden = () => {
+		hidden = !hidden;
+	};
+</script>
+
+<div class="listitem">
+	<button class="header" on:click={toggleHidden}>
+		<img src={getImageUrl(world.collectionId, world.id, world.thumbnail)} class="thumbnail" alt={`${world.title} Icon`} />
+		<div class="information">
+            <div>
+                <div class="title">{world.title}</div>
+                <div class="description">{world.description}</div>
+            </div>
+			<div class="tags">
+                {#if world.minecraftVersion}
+                    <div class="tag">{world.minecraftVersion}</div>
+                {/if}
+                {#if world.modLoader}
+                    <div class="tag">{world.modLoader}</div>
+                {/if}
+                
+				{#each (world.tags ?? "").split(",") as tag}
+					<div class="tag">{tag}</div>
+				{/each}
+			</div>
+		</div>
+	</button>
+	{#if !hidden}
+		<div class="hidden">
+			{#if world.images?.length}
+				<div class="section">
+					<div class="section-title">Images</div>
+					<div class="images">
+						{#each world.images ?? [] as image}
+                            <div>
+                                <img class="image" alt={`${world.title} Image`} src={getImageUrl(world.collectionId, world.id, image)} />
+                            </div>
+						{/each}
+					</div>
+				</div>
+			{/if}
+			{#if world.otherDownloads?.length}
+				<div class="section">
+					<div class="section-title">Other Downloads</div>
+					<div class="other-downloads">
+						{#each world.otherDownloads ?? [] as download}
+                            <FileDownload file={getImageUrl(world.collectionId, world.id, download)} />
+						{/each}
+					</div>
+				</div>
+			{/if}
+		</div>
+	{/if}
+</div>
