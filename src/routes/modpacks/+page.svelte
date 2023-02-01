@@ -23,7 +23,6 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		max-width: 50rem;
         width: 100%;
 	}
 </style>
