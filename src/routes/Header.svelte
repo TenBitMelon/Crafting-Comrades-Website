@@ -6,6 +6,7 @@
 	<nav>
 		<a href="/modpacks">Modpacks</a>
 		<a href="/worlds">Worlds</a>
+		<a href="/map">Map</a>
 	</nav>
 </header>
 
