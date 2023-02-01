@@ -1,12 +1,10 @@
-import type { ModpacksRecord, ModpacksResponse, ServersResponse, WorldsResponse } from '$lib/types';
-import PocketBase from 'pocketbase';
+import type { WorldsResponse } from '$lib/types';
+import { pb } from '$lib/utils';
 
 // export const prerender = true;
 
 /** @type {import('./$types').PageLoad} */
 export async function load({}) {
-	const pb = new PocketBase('http://127.0.0.1:8090');
-
 	const records: WorldsResponse[] = await pb.collection('worlds').getFullList(200 /* batch size */, {
 		sort: '-created'
 	});

@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <header>
 	<!-- Header with banner & nav buttons for modpacks / servers / TBD -->
 	<div class="banner">
@@ -8,7 +5,6 @@
 	</div>
 	<nav>
 		<a href="/modpacks">Modpacks</a>
-		<a href="/servers">Servers</a>
 		<a href="/worlds">Worlds</a>
 	</nav>
 </header>

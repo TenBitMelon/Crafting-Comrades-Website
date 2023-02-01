@@ -1,4 +1,5 @@
 <script lang="ts">
+	import OnlineServer from '$lib/OnlineServer.svelte';
 	import Header from './Header.svelte';
 	import './styles.css';
 </script>
@@ -7,6 +8,7 @@
 	<Header />
 
 	<main>
+		<OnlineServer />
 		<slot />
 	</main>
 

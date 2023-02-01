@@ -182,6 +182,7 @@ button:focus:not(:focus-visible) {
 }
 .long-description {
 	font-size: 1rem;
+	white-space: pre-wrap;
 }
 /* Display images in a 3 column grid */
 .images {
@@ -206,4 +207,35 @@ button:focus:not(:focus-visible) {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
+}
+/* Smaller scales below width: 650 */
+@media (max-width: 650px) {
+	/* listitem */
+	.listitem {
+		padding: 0.8rem;
+	}
+	.header {
+		height: 5rem;
+		padding: 0.5rem;
+	}
+	.title {
+		font-size: 1rem;
+	}
+	.description {
+		font-size: 0.8rem;
+		margin: 0;
+	}
+	.tag {
+		font-size: 0.8rem;
+		padding: 0.25rem;
+	}
+	.images {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.other-downloads {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.downloads {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }

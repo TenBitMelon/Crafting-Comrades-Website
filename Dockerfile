@@ -1,15 +1,29 @@
-# Dockerfile
+FROM --platform=linux/amd64 node:18-alpine
 
-FROM node:18-alpine
+ENV NODE_ENV development
 
 RUN npm install -g pnpm
 
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+
+COPY package*.json pnpm-lock.yaml* ./
+
+RUN pnpm i
 
 COPY . .
-RUN pnpm build
+
+ENV NODE_ENV production
+
+RUN pnpm run build
+
+FROM --platform=linux/amd64 node:18-slim
+
+WORKDIR /app
+
+COPY --from=0 /app .
+
+COPY . .
 
 EXPOSE 3000
-CMD ["node", "build"]
+
+CMD ["node", "./build"]
