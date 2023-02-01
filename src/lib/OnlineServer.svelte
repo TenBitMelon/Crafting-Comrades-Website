@@ -1,8 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 	import type { ServerPingResponse } from './ServerPingResponse';
-    import type { ServersResponse } from '$lib/types';
-	import { pb } from './utils';
 
     let serverData: ServerPingResponse;
 

@@ -1,14 +1,21 @@
 <!-- New svelte component that takes in a file url and displays a svg file icon with the file extention as text over top -->
 <script lang="ts">
-	import { getImageUrl } from "./utils";
+    // import { capitalCase } from "change-case";
 
+    export let file: string; // https://db.craftingcomrades.net/api/files/ip9y62tsxf92g77/9lt2tjloj6b5cy7/curseforge_PYOLtVqQYV.zip
+    let fileName: string = file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf(".") - 11);
+    let extension: string = file.substring(file.lastIndexOf(".") + 1);
 
-    export let file: string;
-    let fileName: string = file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf("_"));
-    let extension: string = file.substring(file.lastIndexOf(".") + 1, file.lastIndexOf("?"));
+    function capitalCase(str: string) {
+        let words = str.split("_");
+        let capitalizedWords = words.map((word) => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        });
+        return capitalizedWords.join(" ");
+    }
 </script>
 
-<a href="{file}" download class="file">
+<a href="{file}" download="name.zip" class="file">
     {#if extension == ".png" || extension == ".jpg" || extension == ".jpeg" || extension == ".gif" || extension == ".svg"}
         <img src="/images/FileIcons/Image.svg" class="file-icon" alt="File Download" />
     {:else if extension == ".mp4" || extension == ".webm" || extension == ".mov"}
@@ -21,7 +28,7 @@
         <img src="/images/FileIcons/File.svg" class="file-icon" alt="File Download" />
     {/if}
     <div class="file-extenstion">{extension}</div>
-    <div class="file-name">{fileName + "." + extension}</div>
+    <div class="file-name">{capitalCase(fileName)}</div>
 </a>
 
 <style>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import FileDownload from '$lib/FileDownload.svelte';
 	import type { WorldsRecord, WorldsResponse } from '$lib/types';
-	import { getImageUrl } from '$lib/utils';
+	import { pb } from '$lib/utils';
 	import { tick } from 'svelte';
 	import { dataset_dev } from 'svelte/internal';
 
@@ -15,7 +15,7 @@
 
 <div class="listitem">
 	<button class="header" on:click={toggleHidden}>
-		<img src={getImageUrl(world.collectionId, world.id, world.thumbnail)} class="thumbnail" alt={`${world.title} Icon`} />
+		<img src={pb.getFileUrl(world, world.thumbnail)} class="thumbnail" alt={`${world.title} Icon`} />
 		<div class="information">
             <div>
                 <div class="title">{world.title}</div>
@@ -43,7 +43,7 @@
 					<div class="images">
 						{#each world.images ?? [] as image}
                             <div>
-                                <img class="image" alt={`${world.title} Image`} src={getImageUrl(world.collectionId, world.id, image)} />
+                                <img class="image" alt={`${world.title} Image`} src={pb.getFileUrl(world, image)} />
                             </div>
 						{/each}
 					</div>
@@ -54,7 +54,7 @@
 					<div class="section-title">Other Downloads</div>
 					<div class="other-downloads">
 						{#each world.otherDownloads ?? [] as download}
-                            <FileDownload file={getImageUrl(world.collectionId, world.id, download)} />
+                            <FileDownload file={pb.getFileUrl(world, download)} />
 						{/each}
 					</div>
 				</div>

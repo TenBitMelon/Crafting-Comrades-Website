@@ -50,23 +50,8 @@ export type ModpacksRecord = {
 	images?: string[]
 	otherDownloads?: string[]
 	downloads?: string[]
+	downloadPrefix?: string
 	relatedServers?: RecordIdString[]
-	relatedWorlds?: RecordIdString[]
-}
-
-export type ServersRecord = {
-	title: string
-	slug: string
-	thumbnail: string
-	minecraftVersion: string
-	modLoader?: string
-	serverAddress?: string
-	serverCurrentlyHosted?: boolean
-	description?: string
-	tags?: string
-	images?: string[]
-	otherDownloads?: string[]
-	relatedModpacks?: RecordIdString[]
 	relatedWorlds?: RecordIdString[]
 }
 
@@ -92,13 +77,11 @@ export type WorldsRecord = {
 
 // Response types include system fields and match responses from the PocketBase API
 export type ModpacksResponse = ModpacksRecord & BaseSystemFields
-export type ServersResponse = ServersRecord & BaseSystemFields
 export type UsersResponse = UsersRecord & AuthSystemFields
 export type WorldsResponse = WorldsRecord & BaseSystemFields
 
 export type CollectionRecords = {
 	modpacks: ModpacksRecord
-	servers: ServersRecord
 	users: UsersRecord
 	worlds: WorldsRecord
 }

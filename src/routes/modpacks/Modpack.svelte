@@ -1,7 +1,7 @@
 <script lang="ts">
 	import FileDownload from '$lib/FileDownload.svelte';
 	import type { ModpacksRecord, ModpacksResponse } from '$lib/types';
-	import { getImageUrl } from '$lib/utils';
+	import { pb } from '$lib/utils';
 	import { tick } from 'svelte';
 	import { dataset_dev } from 'svelte/internal';
 
@@ -15,7 +15,7 @@
 
 <div class="listitem">
 	<button class="header" on:click={toggleHidden}>
-		<img src={getImageUrl(modpack.collectionId, modpack.id, modpack.thumbnail)} class="thumbnail" alt={`${modpack.title} Icon`} />
+		<img src={pb.getFileUrl(modpack, modpack.thumbnail)} class="thumbnail" alt={`${modpack.title} Icon`} />
 		<div class="information">
             <div>
                 <div class="title">{modpack.title}</div>
@@ -52,7 +52,7 @@
 					<div class="images">
 						{#each modpack.images ?? [] as image}
                             <div>
-                                <img class="image" alt={`${modpack.title} Image`} src={getImageUrl(modpack.collectionId, modpack.id, image)} />
+                                <img class="image" alt={`${modpack.title} Image`} src={pb.getFileUrl(modpack, image)} />
                             </div>
 						{/each}
 					</div>
@@ -63,7 +63,7 @@
 					<div class="section-title">Other Downloads</div>
 					<div class="other-downloads">
 						{#each modpack.otherDownloads ?? [] as download}
-                            <FileDownload file={getImageUrl(modpack.collectionId, modpack.id, download)} />
+                            <FileDownload file={pb.getFileUrl(modpack, download)} />
 						{/each}
 					</div>
 				</div>
@@ -73,7 +73,7 @@
 					<div class="section-title">Downloads</div>
 					<div class="downloads">
 						{#each modpack.downloads ?? [] as download}
-                            <FileDownload file={getImageUrl(modpack.collectionId, modpack.id, download)} />
+                            <FileDownload file={pb.getFileUrl(modpack, download)} />
 						{/each}
 					</div>
 				</div>
