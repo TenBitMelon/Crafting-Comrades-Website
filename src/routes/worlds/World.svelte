@@ -18,7 +18,6 @@
 		<div class="information">
             <div>
                 <div class="title">{world.title}</div>
-                <div class="description">{world.description}</div>
             </div>
 			<div class="tags">
                 {#if world.minecraftVersion}

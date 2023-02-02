@@ -18,7 +18,6 @@
 		<div class="information">
             <div>
                 <div class="title">{modpack.title}</div>
-                <div class="description">{modpack.description}</div>
             </div>
 			<div class="tags">
                 {#if modpack.minecraftVersion}
