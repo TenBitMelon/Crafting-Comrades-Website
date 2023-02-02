@@ -1,6 +1,7 @@
 <script lang="ts">
 	import FileDownload from '$lib/FileDownload.svelte';
-	import type { WorldsRecord, WorldsResponse } from '$lib/types';
+	import PreviewImage from '$lib/PreviewImage.svelte';
+	import type { WorldsRecord, WorldsResponse, CollectionRecords } from '$lib/types';
 	import { pb } from '$lib/utils';
 	import { tick } from 'svelte';
 	import { dataset_dev } from 'svelte/internal';
@@ -42,9 +43,7 @@
 					<div class="section-title">Images</div>
 					<div class="images">
 						{#each world.images ?? [] as image}
-                            <div>
-                                <img class="image" alt={`${world.title} Image`} src={pb.getFileUrl(world, image)} />
-                            </div>
+							<PreviewImage imageUrl={pb.getFileUrl(world, image)} />
 						{/each}
 					</div>
 				</div>

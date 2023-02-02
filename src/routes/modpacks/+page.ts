@@ -1,5 +1,6 @@
-import type { ModpacksResponse } from '$lib/types';
+import type { ModpacksResponse, ModpacksRecord } from '$lib/types';
 import { pb } from '$lib/utils';
+import type { Record } from 'pocketbase';
 
 // export const prerender = true;
 

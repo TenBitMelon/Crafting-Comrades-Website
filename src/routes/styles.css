@@ -195,7 +195,6 @@ footer {
 	padding: 1rem;
 	border-radius: 0.5rem;
 	outline: 0.1rem solid white;
-	position: relative;
 	transition: outline 0.2s;
 }
 .section:hover {
@@ -215,14 +214,6 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
-}
-.image {
-	border-radius: 0.5rem;
-	object-fit: contain;
-	object-position: center;
-	aspect-ratio: 1/1;
-	height: 100%;
-	width: 100%;
 }
 .other-downloads {
 	display: grid;

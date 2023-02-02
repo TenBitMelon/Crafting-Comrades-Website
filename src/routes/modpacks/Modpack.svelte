@@ -1,5 +1,6 @@
 <script lang="ts">
 	import FileDownload from '$lib/FileDownload.svelte';
+	import PreviewImage from '$lib/PreviewImage.svelte';
 	import type { ModpacksRecord, ModpacksResponse } from '$lib/types';
 	import { pb } from '$lib/utils';
 	import { tick } from 'svelte';
@@ -51,9 +52,7 @@
 					<div class="section-title">Images</div>
 					<div class="images">
 						{#each modpack.images ?? [] as image}
-                            <div>
-                                <img class="image" alt={`${modpack.title} Image`} src={pb.getFileUrl(modpack, image)} />
-                            </div>
+							<PreviewImage imageUrl={pb.getFileUrl(modpack, image)} />
 						{/each}
 					</div>
 				</div>
