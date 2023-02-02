@@ -1,10 +1,8 @@
 <script lang="ts">
 	import FileDownload from '$lib/FileDownload.svelte';
 	import PreviewImage from '$lib/PreviewImage.svelte';
-	import type { ModpacksRecord, ModpacksResponse } from '$lib/types';
+	import type { ModpacksResponse } from '$lib/types';
 	import { pb } from '$lib/utils';
-	import { tick } from 'svelte';
-	import { dataset_dev } from 'svelte/internal';
 
 	export let modpack: ModpacksResponse;
 	export const link: Boolean = false;

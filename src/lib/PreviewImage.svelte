@@ -44,8 +44,4 @@
         z-index: 1;
         object-fit: contain;
     }
-    .image-overlay[hidden] {
-        opacity: 0;
-        transition: opacity 0.5s;
-    }
 </style>
