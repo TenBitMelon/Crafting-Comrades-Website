@@ -1,10 +1,10 @@
 <script lang="ts">
 	import FileDownload from '$lib/FileDownload.svelte';
 	import PreviewImage from '$lib/PreviewImage.svelte';
-	import type { ModpacksResponse } from '$lib/types';
+	import type { ModpacksRecord, ModpacksResponse } from '$lib/types';
 	import { pb } from '$lib/utils';
 
-	export let modpack: ModpacksResponse;
+	export let modpack: ModpacksRecord;
 	export const link: Boolean = false;
 	let hidden = true;
 	let toggleHidden = () => {
