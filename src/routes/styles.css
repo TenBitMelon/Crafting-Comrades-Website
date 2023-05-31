@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'MinecraftiaRegular';
+	src: url('/fonts/MinecraftiaRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 :root {
 	--font-body: 'IBM Plex Mono', monospace;
 	--color-bg-0: rgb(202, 216, 228);
