@@ -17,15 +17,16 @@
 
 {#if serverData && serverData.online}
 	<div class="listitem">
-		<div class="header" style="cursor: default">
+		<div class="header" style="cursor: default; background-color: #222222">
 			<img
 				src={serverData.icon || 'https://via.placeholder.com/150'}
 				class="thumbnail"
 				alt="server icon"
+				style="image-rendering:pixelated;"
 			/>
 			<div class="information">
 				<div>
-					<div class="description">
+					<div class="description" style="font-family: 'MinecraftiaRegular', 'Unifont', sans-serif;">
 						{@html serverData.motd?.html[0]}<br />{@html serverData.motd?.html[1]}
 					</div>
 					<div class="description">
