@@ -35,6 +35,12 @@
 	</button>
 	{#if !hidden}
 		<div class="hidden">
+			{#if world.description}
+				<div class="section">
+					<div class="section-title">Description</div>
+					<div class="long-description">{world.description}</div>
+				</div>
+			{/if}
 			{#if world.images?.length}
 				<div class="section">
 					<div class="section-title">Images</div>
