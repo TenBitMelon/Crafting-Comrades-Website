@@ -7,6 +7,8 @@
 		<a href="/modpacks">Modpacks</a>
 		<a href="/worlds">Worlds</a>
 		<a href="/map">Map</a>
+		<a href="/about">About</a>
+		<a href="/tmp-files">TMP Files</a>
 	</nav>
 </header>
 
@@ -43,6 +45,4 @@
 	nav a:hover {
 		border: 1px solid rgb(255, 0, 0);
 	}
-	
 </style>
-
