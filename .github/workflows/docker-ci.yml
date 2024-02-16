@@ -29,6 +29,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
+          tags: |
+            type=edge
+            type=sha
           images: |
             ghcr.io/${{ github.repository }}
       - name: Build and Push Image
