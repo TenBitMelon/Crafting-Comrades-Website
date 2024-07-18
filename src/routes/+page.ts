@@ -4,6 +4,6 @@ import { redirect } from '@sveltejs/kit';
 export const prerender = true;
 
 /** @type {import('./$types').LayoutServerLoad} */
-export function load({}) {
+export function load() {
 	throw redirect(307, '/modpacks');
 }

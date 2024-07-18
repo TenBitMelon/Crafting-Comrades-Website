@@ -14,23 +14,27 @@
 
 <div class="listitem">
 	<button class="header" on:click={toggleHidden}>
-		<img src={pb.getFileUrl(modpack, modpack.thumbnail)} class="thumbnail" alt={`${modpack.title} Icon`} />
+		<img
+			src={pb.getFileUrl(modpack, modpack.thumbnail)}
+			class="thumbnail"
+			alt={`${modpack.title} Icon`}
+		/>
 		<div class="information">
-            <div>
-                <div class="title">{modpack.title}</div>
-            </div>
+			<div>
+				<div class="title">{modpack.title}</div>
+			</div>
 			<div class="tags">
-                {#if modpack.minecraftVersion}
-                    <div class="tag">{modpack.minecraftVersion}</div>
-                {/if}
-                {#if modpack.modLoader}
-                    <div class="tag">{modpack.modLoader}</div>
-                {/if}
-                {#if modpack.modpackVersion}
-                    <div class="tag">{modpack.modpackVersion}</div>
-                {/if}
-                
-				{#each (modpack.tags ?? "").split(",") as tag}
+				{#if modpack.minecraftVersion}
+					<div class="tag">{modpack.minecraftVersion}</div>
+				{/if}
+				{#if modpack.modLoader}
+					<div class="tag">{modpack.modLoader}</div>
+				{/if}
+				{#if modpack.modpackVersion}
+					<div class="tag">{modpack.modpackVersion}</div>
+				{/if}
+
+				{#each (modpack.tags ?? '').split(',') as tag}
 					<div class="tag">{tag}</div>
 				{/each}
 			</div>
@@ -59,7 +63,7 @@
 					<div class="section-title">Other Downloads</div>
 					<div class="other-downloads">
 						{#each modpack.otherDownloads ?? [] as download}
-                            <FileDownload file={pb.getFileUrl(modpack, download)} />
+							<FileDownload file={pb.getFileUrl(modpack, download)} />
 						{/each}
 					</div>
 				</div>
@@ -69,7 +73,7 @@
 					<div class="section-title">Downloads</div>
 					<div class="downloads">
 						{#each modpack.downloads ?? [] as download}
-                            <FileDownload file={pb.getFileUrl(modpack, download)} />
+							<FileDownload file={pb.getFileUrl(modpack, download)} />
 						{/each}
 					</div>
 				</div>

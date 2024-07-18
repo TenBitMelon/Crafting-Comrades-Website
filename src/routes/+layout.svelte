@@ -4,6 +4,7 @@
 	import './styles.css';
 </script>
 
+<div class="background" />
 <div class="app">
 	<Header />
 
@@ -13,6 +14,6 @@
 	</main>
 
 	<footer>
-		<p>© copyright lololol</p>
+		<p>© Arr! All rights reserved, ye scurvy dogs!</p>
 	</footer>
 </div>
