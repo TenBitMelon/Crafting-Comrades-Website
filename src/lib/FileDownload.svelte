@@ -18,7 +18,7 @@
 </script>
 
 <a href={file} download="name.zip" class="file">
-	{#if extension == 'png' || extension == 'jpg' || extension == 'jpeg' || extension == 'gif' || extension == 'svg'}
+	{#if extension == 'png' || extension == 'webp' || extension == 'jpg' || extension == 'jpeg' || extension == 'gif' || extension == 'svg'}
 		<img src="/images/FileIcons/Image.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp4' || extension == 'webm' || extension == 'mov'}
 		<img src="/images/FileIcons/Video.svg" class="file-icon" alt="File Download" />
