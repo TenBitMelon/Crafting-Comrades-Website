@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class="listitem">
+<div class="listitem" id="{modpack.slug}">
 	<button class="header" on:click={toggleHidden}>
 		<img src={pb.getFileUrl(modpack, modpack.thumbnail)} class="thumbnail" alt={`${modpack.title} Icon`} />
 		<div class="information">

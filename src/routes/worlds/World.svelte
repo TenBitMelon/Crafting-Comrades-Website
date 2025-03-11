@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class="listitem">
+<div class="listitem" id="{world.slug}">
 	<button class="header" on:click={toggleHidden}>
 		<img src={pb.getFileUrl(world, world.thumbnail)} class="thumbnail" alt={`${world.title} Icon`} />
 		<div class="information">
