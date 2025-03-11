@@ -19,11 +19,11 @@
 
 <a href={file} download="name.zip" class="file">
 	{#if extension == 'png' || extension == 'jpg' || extension == 'jpeg' || extension == 'gif' || extension == 'svg'}
-		<img src="/images/FileIcons/Imagesvg" class="file-icon" alt="File Download" />
+		<img src="/images/FileIcons/Image.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp4' || extension == 'webm' || extension == 'mov'}
-		<img src="/images/FileIcons/Videosvg" class="file-icon" alt="File Download" />
+		<img src="/images/FileIcons/Video.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp3' || extension == 'wav' || extension == 'ogg'}
-		<img src="/images/FileIcons/Audiosvg" class="file-icon" alt="File Download" />
+		<img src="/images/FileIcons/Audio.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'zip' || extension == 'rar' || extension == '7z'}
 		<img src="/images/FileIcons/Compressed.svg" class="file-icon" alt="File Download" />
 	{:else}
