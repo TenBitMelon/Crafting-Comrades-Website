@@ -73,7 +73,8 @@ export type WorldsRecord = {
 export type ServicesRecord = {
 	title: string;
 	slug: string;
-	link: string;
+	link?: string;
+	linkButton?: string;
 	thumbnail: string;
 	tags?: string;
 	author?: string;

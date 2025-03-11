@@ -44,6 +44,15 @@
 					</div>
 				</div>
 			{/if}
+			{#if service.link}
+				<div class="link"><a target="_blank" class="linkButton" href={service.link}>
+					{#if service.linkButton}
+						{service.linkButton}
+					{:else}
+						Go!
+					{/if}
+				</a></div>
+			{/if}
 			{#if service.otherDownloads?.length}
 				<div class="section">
 					<div class="section-title">Other Downloads</div>
@@ -57,7 +66,7 @@
 			{#if service.downloads?.length}
 				<div class="section">
 					<div class="section-title">Downloads</div>
-					<div class="downloads">
+					<div class="downloadslink">
 						{#each service.downloads ?? [] as download}
                             <FileDownload file={pb.getFileUrl(service, download)} />
 						{/each}
