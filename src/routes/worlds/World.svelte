@@ -26,10 +26,12 @@
 				{#if world.modLoader}
 						<div class="tag">{world.modLoader}</div>
 				{/if}
-                
+
+                {#if world.tags?.length}
 				{#each (world.tags ?? "").split(",") as tag}
 					<div class="tag">{tag}</div>
 				{/each}
+				{/if}
 			</div>
 		</div>
 	</button>

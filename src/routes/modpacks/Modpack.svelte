@@ -29,10 +29,12 @@
                 {#if modpack.modpackVersion}
                     <div class="tag">{modpack.modpackVersion}</div>
                 {/if}
-                
+
+                {#if modpack.tags?.length}
 				{#each (modpack.tags ?? "").split(",") as tag}
 					<div class="tag">{tag}</div>
 				{/each}
+				{/if}
 			</div>
 		</div>
 	</button>

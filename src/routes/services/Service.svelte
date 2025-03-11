@@ -19,10 +19,12 @@
             <div>
                 <div class="title">{service.title}</div>
             </div>
-			<div class="tags">                
+			<div class="tags">
+				{#if service.tags?.length}
 				{#each (service.tags ?? "").split(",") as tag}
 					<div class="tag">{tag}</div>
 				{/each}
+				{/if}
 			</div>
 		</div>
 	</button>
