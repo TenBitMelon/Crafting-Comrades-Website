@@ -8,6 +8,7 @@
 		<a href="/worlds">Worlds</a>
 		<a href="/map">Map</a>
 		<a href="/about">About</a>
+		<a href="/services">Services</a>
 		<a href="/tmp-files">TMP Files</a>
 	</nav>
 </header>

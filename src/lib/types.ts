@@ -8,6 +8,7 @@ export enum Collections {
 	Modpacks = 'modpacks',
 	Users = 'users',
 	Worlds = 'worlds',
+	Services = 'services',
 	TemporaryFiles = 'temporaryFiles'
 }
 
@@ -69,6 +70,20 @@ export type WorldsRecord = {
 	relatedModpacks?: RecordIdString[];
 };
 
+export type ServicesRecord = {
+	title: string;
+	slug: string;
+	link: string;
+	thumbnail: string;
+	tags?: string;
+	author?: string;
+	longDescription?: string;
+	images?: string[];
+	otherDownloads?: string[];
+	downloads?: string[];
+	downloadPrefix?: string;
+};
+
 export type TemporaryFilesRecord = {
 	file: RecordIdString;
 };
@@ -79,11 +94,13 @@ export type UsersResponse = UsersRecord & BaseModel & AuthSystemFields;
 export type WorldsResponse<Texpand = unknown> = WorldsRecord &
 	BaseModel &
 	BaseSystemFields<Texpand>;
+export type ServicesResponse = ServicesRecord & BaseModel & BaseSystemFields;
 export type TemporaryFilesResponse = TemporaryFilesRecord & BaseModel & BaseSystemFields;
 
 export type CollectionRecords = {
 	modpacks: ModpacksRecord;
 	users: UsersRecord;
 	worlds: WorldsRecord;
+	services: ServicesRecord;
 	temporaryFiles: TemporaryFilesRecord;
 };
