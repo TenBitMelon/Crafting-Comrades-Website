@@ -23,15 +23,15 @@
 
 <a href={file} download="name.zip" class="file">
 	{#if extension == 'png' || extension == 'webp' || extension == 'jpg' || extension == 'jpeg' || extension == 'gif' || extension == 'svg'}
-		<img src="/{currentEvent}/FileIcons/Image.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent.key}/FileIcons/Image.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp4' || extension == 'webm' || extension == 'mov'}
-		<img src="/{currentEvent}/FileIcons/Video.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent.key}/FileIcons/Video.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp3' || extension == 'wav' || extension == 'ogg'}
-		<img src="/{currentEvent}/FileIcons/Audio.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent.key}/FileIcons/Audio.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'zip' || extension == 'rar' || extension == '7z'}
-		<img src="/{currentEvent}/FileIcons/Compressed.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent.key}/FileIcons/Compressed.svg" class="file-icon" alt="File Download" />
 	{:else}
-		<img src="/{currentEvent}/FileIcons/File.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent.key}/FileIcons/File.svg" class="file-icon" alt="File Download" />
 	{/if}
 	<div class="file-extenstion">{extension}</div>
 	<div class="file-name">{capitalCase(fileName)}</div>

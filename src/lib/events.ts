@@ -49,7 +49,7 @@ export function getCurrentEvent() {
 	const currentMonth = now.getMonth();
 	const currentDay = now.getDate();
 
-	for (const [name, event] of Object.entries(allEvents)) {
+	for (const [_, event] of Object.entries(allEvents)) {
 		if (event.dateStart && event.dateEnd) {
 			const isAfterStart =
 				currentMonth > event.dateStart.month ||
