@@ -3,7 +3,6 @@
 	import Header from './Header.svelte';
 
 	import { getCurrentEvent } from '$lib/events';
-	import { onMount } from 'svelte';
 	const event = getCurrentEvent();
 </script>
 
