@@ -1,5 +1,7 @@
 <!-- New svelte component that takes in a file url and displays a svg file icon with the file extention as text over top -->
 <script lang="ts">
+	import { getCurrentEvent } from './events';
+
 	// import { capitalCase } from "change-case";
 
 	export let file: string; // https://db.craftingcomrades.net/api/files/ip9y62tsxf92g77/9lt2tjloj6b5cy7/curseforge_PYOLtVqQYV.zip
@@ -15,19 +17,21 @@
 		});
 		return capitalizedWords.join(' ');
 	}
+
+	const currentEvent = getCurrentEvent();
 </script>
 
 <a href={file} download="name.zip" class="file">
 	{#if extension == 'png' || extension == 'webp' || extension == 'jpg' || extension == 'jpeg' || extension == 'gif' || extension == 'svg'}
-		<img src="/images/FileIcons/Image.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent}/FileIcons/Image.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp4' || extension == 'webm' || extension == 'mov'}
-		<img src="/images/FileIcons/Video.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent}/FileIcons/Video.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'mp3' || extension == 'wav' || extension == 'ogg'}
-		<img src="/images/FileIcons/Audio.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent}/FileIcons/Audio.svg" class="file-icon" alt="File Download" />
 	{:else if extension == 'zip' || extension == 'rar' || extension == '7z'}
-		<img src="/images/FileIcons/Compressed.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent}/FileIcons/Compressed.svg" class="file-icon" alt="File Download" />
 	{:else}
-		<img src="/images/FileIcons/File.svg" class="file-icon" alt="File Download" />
+		<img src="/{currentEvent}/FileIcons/File.svg" class="file-icon" alt="File Download" />
 	{/if}
 	<div class="file-extenstion">{extension}</div>
 	<div class="file-name">{capitalCase(fileName)}</div>

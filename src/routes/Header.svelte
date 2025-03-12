@@ -1,15 +1,21 @@
+<script lang="ts">
+	import { getCurrentEvent } from '$lib/events';
+
+	const event = getCurrentEvent();
+</script>
+
 <header>
 	<!-- Header with banner & nav buttons for modpacks / servers / TBD -->
 	<div class="banner">
-		<img src="/images/banner.png" alt="Banner" class="banner" />
+		<img src="/{event.key}/banner.png" alt="Banner" class="banner" />
 	</div>
 	<nav>
-		<a href="/modpacks">Modpacks</a>
-		<a href="/worlds">Worlds</a>
-		<a href="/map">Map</a>
-		<a href="/about">About</a>
-		<a href="/services">Services</a>
-		<a href="/tmp-files">TMP Files</a>
+		<a href="/modpacks">{event.tabs.modpacks}</a>
+		<a href="/worlds">{event.tabs.worlds}</a>
+		<a href="/map">{event.tabs.map}</a>
+		<a href="/about">{event.tabs.about}</a>
+		<a href="/services">{event.tabs.services}</a>
+		<a href="/tmp-files">{event.tabs.tmpFiles}</a>
 	</nav>
 </header>
 
