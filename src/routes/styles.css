@@ -237,6 +237,23 @@ footer {
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
 }
+.link {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+.linkButton {
+	font-size: 1rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: #fff;
+	box-shadow: -0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.075);
+	outline: 0.1rem solid white;
+}
+.linkButton:hover {
+	outline: 0.1rem solid var(--color-theme-1);
+}
 /* Smaller scales below width: 650 */
 @media (max-width: 650px) {
 	/* listitem */

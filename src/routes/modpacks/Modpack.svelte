@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class="listitem">
+<div class="listitem" id="{modpack.slug}">
 	<button class="header" on:click={toggleHidden}>
 		<img src={pb.getFileUrl(modpack, modpack.thumbnail)} class="thumbnail" alt={`${modpack.title} Icon`} />
 		<div class="information">
@@ -29,10 +29,12 @@
                 {#if modpack.modpackVersion}
                     <div class="tag">{modpack.modpackVersion}</div>
                 {/if}
-                
+
+                {#if modpack.tags?.length}
 				{#each (modpack.tags ?? "").split(",") as tag}
 					<div class="tag">{tag}</div>
 				{/each}
+				{/if}
 			</div>
 		</div>
 	</button>

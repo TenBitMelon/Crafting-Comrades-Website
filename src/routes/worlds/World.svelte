@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class="listitem">
+<div class="listitem" id="{world.slug}">
 	<button class="header" on:click={toggleHidden}>
 		<img src={pb.getFileUrl(world, world.thumbnail)} class="thumbnail" alt={`${world.title} Icon`} />
 		<div class="information">
@@ -26,10 +26,12 @@
 				{#if world.modLoader}
 						<div class="tag">{world.modLoader}</div>
 				{/if}
-                
+
+                {#if world.tags?.length}
 				{#each (world.tags ?? "").split(",") as tag}
 					<div class="tag">{tag}</div>
 				{/each}
+				{/if}
 			</div>
 		</div>
 	</button>
