@@ -21,6 +21,6 @@
 	</main>
 
 	<footer>
-		<p>© copyright lololol</p>
+		<p>{event.copyright}</p>
 	</footer>
 </div>

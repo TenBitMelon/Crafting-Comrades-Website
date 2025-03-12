@@ -11,7 +11,21 @@ const allEvents = {
 			services: 'Bounty',
 			tmpFiles: "Ship's Log"
 		},
-		copywrite: '© Arr! All rights reserved, ye scurvy dogs!'
+		copyright: '© Arr! All rights reserved, ye scurvy dogs!'
+	},
+	summer: {
+		key: 'summer',
+		dateStart: { month: 5, day: 21 }, // June is month 5 (0-indexed)
+		dateEnd: { month: 7, day: 23 }, // August is month 7
+		tabs: {
+			modpacks: 'Hot Mods',
+			worlds: 'Sunny Islands',
+			map: 'Beach Map',
+			about: 'Lifeguards',
+			services: 'Surf Shop',
+			tmpFiles: 'Holiday Snaps'
+		},
+		copyright: '© Sizzling Summer! All rights reserved under the sun!'
 	}
 };
 
@@ -27,7 +41,7 @@ const defaultEvent = {
 		services: 'Services',
 		tmpFiles: 'TMP Files'
 	},
-	copywrite: '© copywrite lololol'
+	copyright: '© copyright lololol'
 };
 
 export function getCurrentEvent() {
