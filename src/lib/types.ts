@@ -75,6 +75,7 @@ export type ServicesRecord = {
 	slug: string;
 	link?: string;
 	linkButton?: string;
+	newTab?: boolean;
 	thumbnail: string;
 	tags?: string;
 	author?: string;
