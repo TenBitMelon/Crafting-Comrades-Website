@@ -1,0 +1,330 @@
+@font-face {
+	font-family: 'MinecraftiaRegular';
+	src: url('/fonts/MinecraftiaRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Comic Sans';
+	src: url('/fonts/ComicSans.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--font-body: 'Comic Sans', sans-serif;
+	/* Summer colors - pale pink to pale yellow gradient */
+	--color-bg-0: rgb(250, 206, 250);
+	--color-bg-1: hsl(300, 71%, 73%);
+	--color-bg-2: hsl(300, 100%, 95%);
+	/* Warm tropical colors */
+	--color-theme-1: #ff00ff; /* Pink */
+	--color-theme-2: #d300a3; /* Magenta */
+	--color-text: #d300a3;
+	--container-width: 42rem;
+	font-family: var(--font-body);
+	color: var(--color-text);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-attachment: fixed;
+	background-color: var(--color-bg-1);
+	background-size: 100vw 100vh;
+	background-image: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(255, 255, 255, 0.75) 0%,
+			rgba(255, 255, 255, 0) 100%
+		),
+		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+}
+
+h1,
+h2,
+p {
+	font-weight: 400;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	color: var(--color-theme-1);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1rem;
+}
+
+pre {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: rgba(255, 255, 255, 0.65);
+	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--color-text);
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+	text-align: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	width: 100%;
+	max-width: 50rem;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+}
+
+.listitem {
+	margin: 1rem 0;
+	width: 100%;
+	padding: 1rem;
+	border-radius: 1rem;
+	outline: 0.1rem solid rgba(255, 255, 255, 0.7);
+	transition: outline 0.2s, box-shadow 0.2s;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 8px rgba(0, 95, 115, 0.1);
+}
+
+.listitem:has(.hidden):hover {
+	outline: 0.1rem solid rgba(255, 255, 255, 0.7);
+}
+
+.listitem:hover {
+	outline: 0.1rem solid var(--color-theme-1);
+	box-shadow: 0 6px 12px rgba(255, 140, 66, 0.2);
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 10rem;
+	padding: 1rem;
+	cursor: pointer;
+	outline: none;
+	background: none;
+	border: none;
+	font: inherit;
+	color: inherit;
+	border-radius: 0.5rem;
+}
+
+.listitem:has(.hidden) .header {
+	outline: 0.1rem solid rgba(255, 255, 255, 0.7);
+}
+
+.listitem:has(.hidden) .header:hover {
+	outline: 0.1rem solid var(--color-theme-1);
+}
+
+.thumbnail {
+	border-radius: 0.5rem;
+	margin-right: 2rem;
+	object-fit: cover;
+	object-position: center;
+	aspect-ratio: 1/1;
+	height: 100%;
+	box-shadow: 0 3px 6px rgba(0, 95, 115, 0.15);
+}
+
+.information {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	border-radius: 0.5rem;
+	width: 100%;
+}
+
+.title {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--color-theme-2);
+}
+
+.online-server-description {
+	font-size: 1.2rem;
+	color: white;
+	font-family: 'MinecraftiaRegular', 'Unifont', sans-serif;
+	text-shadow: 1px 1px 2px rgba(0, 95, 115, 0.5);
+}
+
+.description {
+	font-size: 1rem;
+	margin-bottom: 1rem;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tag {
+	font-size: 1rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.6);
+	box-shadow: -0.25rem 0.25rem 0.25rem rgba(0, 95, 115, 0.1);
+	border: 1px solid rgba(255, 140, 66, 0.3);
+}
+
+.hidden {
+	margin-top: 1rem;
+	transition: outline 0.2s;
+}
+
+.section {
+	margin-top: 1rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	outline: 0.1rem solid rgba(255, 255, 255, 0.7);
+	transition: outline 0.2s, box-shadow 0.2s;
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: 0 3px 6px rgba(0, 95, 115, 0.1);
+}
+
+.section:hover {
+	outline: 0.1rem solid var(--color-theme-1);
+	box-shadow: 0 4px 8px rgba(255, 140, 66, 0.2);
+}
+
+.section-title {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	color: var(--color-theme-2);
+}
+
+.long-description {
+	font-size: 1rem;
+	white-space: pre-wrap;
+}
+
+.images {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.other-downloads {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.downloads {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.link {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.linkButton {
+	font-size: 1rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: -0.25rem 0.25rem 0.25rem rgba(0, 95, 115, 0.1);
+	outline: 0.1rem solid rgba(255, 255, 255, 0.5);
+	transition: all 0.2s;
+	color: var(--color-theme-2);
+}
+
+.linkButton:hover {
+	outline: 0.1rem solid var(--color-theme-1);
+	background-color: rgba(255, 255, 255, 0.7);
+	transform: translateY(-2px);
+}
+
+@media (max-width: 650px) {
+	.listitem {
+		padding: 0.8rem;
+	}
+	.header {
+		height: 5rem;
+		padding: 0.5rem;
+	}
+	.title {
+		font-size: 1rem;
+	}
+	.online-server-description {
+		font-size: 2.2vw;
+	}
+	.description {
+		font-size: 0.8rem;
+		margin: 0;
+	}
+	.tag {
+		font-size: 0.8rem;
+		padding: 0.25rem;
+	}
+	.images {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.other-downloads {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.downloads {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

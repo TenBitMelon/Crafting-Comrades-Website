@@ -26,6 +26,20 @@ const allEvents = {
 			tmpFiles: 'Holiday Snaps'
 		},
 		copyright: '© Sizzling Summer! All rights reserved under the sun!'
+	},
+	fool: {
+		key: 'fool',
+		dateStart: { month: 3, day: 1 },
+		dateEnd: { month: 3, day: 2 },
+		tabs: {
+			modpacks: 'Mawdpwacksh',
+			worlds: 'Wawwwdsh',
+			map: 'Mapw',
+			about: 'Abawut',
+			services: 'Shewvicesh',
+			tmpFiles: 'TMPW Fiwesh'
+		},
+		copyright: '© OwO Aww wiwhtsh weshewved undew UwU!'
 	}
 };
 
